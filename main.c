@@ -38,6 +38,11 @@ int main()
 
     } while (gameStatus == -1);
 
+    if (gameStatus == 1)
+        printf("==>\aPlayer %d win ", --player);
+    else
+        printf("==>\aGame draw");
+
     return 0;
 }
 
