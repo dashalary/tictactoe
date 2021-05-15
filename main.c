@@ -11,6 +11,33 @@ void markBoard(char mark);
 
 int main()
 {
+    int gameStatus;
+    char mark;
+    player = 1;
+
+    do
+    {
+        displayBoard();
+
+        // change turns
+        player = (player % 2) ? 1 : 2;
+
+        // get input
+        printf("Player %d, enter a number: ", player);
+        scanf("%d", &choice);
+
+        // set the correct character based on player turn
+        mark = (player == 1) ? 'X' : 'O';
+
+        // set board based on user choice
+        markBoard(mark);
+
+        gameStatus = checkforWin();
+
+        player++;
+
+    } while (gameStatus == -1);
+
     return 0;
 }
 
@@ -58,5 +85,62 @@ int checkforWin()
 
 void displayBoard()
 {
-    return 0;
+    system("cls"); // to clear the screen on Windows
+
+    printf("\n\n\tTic Tac Toe\n\n");
+
+    printf("Player 1 (X) - Player 2 (O)\n\n\n");
+
+    printf("    |     |     \n");
+    printf("    %c  |   %c  |   %c \n", square[1], square[2], square[3]);
+
+    printf("____|_____|_____\n");
+    printf("    |     |     \n");
+
+    printf("    %c  |   %c  |   %c \n", square[4], square[5], square[6]);
+
+    printf("____|_____|_____\n");
+    printf("    |     |     \n");
+
+    printf("    %c  |   %c  |   %c \n", square[7], square[8], square[9]);
+    printf("    |     |     \n\n");
+}
+
+/* this function will set the board with the right character (x or o) in the right spot in the array */
+
+void markBoard(char mark)
+{
+    if (choice == 1 && square[1] == '1')
+        square[1] = mark;
+
+    else if (choice == 2 && square[2] == '2')
+        square[2] = mark;
+
+    else if (choice == 3 && square[3] == '3')
+        square[3] = mark;
+
+    else if (choice == 4 && square[4] == '4')
+        square[4] = mark;
+
+    else if (choice == 5 && square[5] == '5')
+        square[5] = mark;
+
+    else if (choice == 6 && square[6] == '6')
+        square[6] = mark;
+
+    else if (choice == 7 && square[7] == '7')
+        square[7] = mark;
+
+    else if (choice == 8 && square[8] == '8')
+        square[8] = mark;
+
+    else if (choice == 9 && square[9] == '9')
+        square[9] = mark;
+
+    else
+    {
+        printf("Invalid move ");
+        player--;
+        getchar();
+    }
 }
