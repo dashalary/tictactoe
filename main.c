@@ -92,17 +92,17 @@ void displayBoard()
     printf("Player 1 (X) - Player 2 (O)\n\n\n");
 
     printf("    |     |     \n");
-    printf("    %c  |   %c  |   %c \n", square[1], square[2], square[3]);
+    printf("  %c |  %c  |  %c \n", square[1], square[2], square[3]);
 
     printf("____|_____|_____\n");
     printf("    |     |     \n");
 
-    printf("    %c  |   %c  |   %c \n", square[4], square[5], square[6]);
+    printf("  %c |  %c  |  %c \n", square[4], square[5], square[6]);
 
     printf("____|_____|_____\n");
     printf("    |     |     \n");
 
-    printf("    %c  |   %c  |   %c \n", square[7], square[8], square[9]);
+    printf("  %c |  %c  |  %c \n", square[7], square[8], square[9]);
     printf("    |     |     \n\n");
 }
 
